@@ -31,7 +31,7 @@ import java.sql.SQLException;
 public class CalciteFrameworksTest {
 
 
-
+    // 中文注释可能导致gradle编译报错，请打开idea设置: Editor->File Encodings 将 Global Encoding / Project Encoding 改为UTF-8解决编译问题
     @Test
     public void parseValidateAndLogicalPlanTest() throws SqlParseException, RelConversionException, ValidationException, SQLException {
 
@@ -82,6 +82,7 @@ public class CalciteFrameworksTest {
 
         // Run it -- 预解析
         PreparedStatement run = RelRunners.run(relNode);
+        // 都会只用avatica框架解析
         ResultSet resultSet = run.executeQuery();
 
         // Print it
